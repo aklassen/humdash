@@ -7,17 +7,21 @@ import { map, catchError } from 'rxjs/operators';
 export class ConfigService {
   openweathermapappid: string;
   locationId: string;
+  cityZip: string;
+  lang: string;
 
   constructor(private http: HttpClient) {}
 
   init() {
-  return new Promise<boolean>((resolve, reject) => {
+    return new Promise<boolean>((resolve, reject) => {
       this.http
         .get('./assets/config.json')
         .pipe(
           map((x: ConfigService) => {
             this.openweathermapappid = x.openweathermapappid;
             this.locationId = x.locationId;
+            this.cityZip = x.cityZip;
+            this.lang = x.lang;
             resolve(true);
           }),
           catchError(
@@ -30,6 +34,8 @@ export class ConfigService {
               }
               this.openweathermapappid = 'YOUR_API_KEY';
               this.locationId = 'YOUR_LOCATION_ID';
+              this.cityZip = 'YOUR_LOCATION_ZIP';
+              this.lang = 'YOUR_LANG';
               resolve(true);
               return of({});
             }
