@@ -22,4 +22,19 @@ describe('DashboardComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should contain humdash logo with title', () => {
+    const fixture = TestBed.createComponent(DashboardComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('img').title).toContain('Humdash Logo');
+    expect(compiled.querySelector('img').alt).toContain('Humdash Logo');
+  });
+
+  it('should contain humdash logo with alt text', () => {
+    const fixture = TestBed.createComponent(DashboardComponent);
+    fixture.detectChanges();
+    const compiled = fixture.debugElement.nativeElement;
+    expect(compiled.querySelector('img').alt).toContain('Humdash Logo');
+  });
 });
