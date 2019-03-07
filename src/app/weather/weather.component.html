@@ -1,3 +1,18 @@
-<p>
-  weather works!
-</p>
+<mat-list>
+  <h3 mat-subheader>Wetter</h3>
+  <mat-list-item>
+    <mat-icon matListIcon>location_city</mat-icon>
+    <h3 matLine>{{ weather?.name }}</h3>
+    <p matLine>
+      <span> Sonnenaufgang </span>
+      <span class="demo-2"> -- {{ weather?.sys.sunrise | date:'dd.MM.yy, HH:mm' }} Uhr</span>
+    </p>
+    <p matLine>
+      <span> Sonnenuntergang </span>
+      <span class="demo-2"> -- {{ weather?.sys.sunset | date:'dd.MM.yy, HH:mm' }} Uhr</span>
+    </p>
+  </mat-list-item>
+</mat-list>
+<!-- <pre>
+{{ weather | json }}
+</pre> -->
