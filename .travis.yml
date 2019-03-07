@@ -1,0 +1,17 @@
+sudo: required
+addons:
+  chrome: stable
+
+language: node_js
+node_js:
+ #version is read from .nvmrc file
+branches:
+  only:
+    - master
+
+before_script:
+  - npm install -g @angular/cli
+
+script:
+  #- ng build --prod --aot
+  - ng test ----source-map=false --browsers=ChromeHeadless --watch=false
