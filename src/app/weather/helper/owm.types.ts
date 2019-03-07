@@ -1,6 +1,7 @@
 /*
 thx to MrJohns42 via https://github.com/Mrjohns42/WeatherDash/blob/master/client/src/app/weatherdash/owm.types.ts */
 
+/* tslint:disable */
 const OWM_ICON_URL = 'https://openweathermap.org/img/w/';
 export function formOWMIconURL(icon) {
   return OWM_ICON_URL + icon + '.png';
