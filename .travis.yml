@@ -5,7 +5,6 @@ addons:
 language: node_js
 node_js:
  #version is read from .nvmrc file
- cache: npm
 branches:
   only:
     - master
@@ -15,4 +14,4 @@ before_script:
 
 script:
   - ng build --prod --aot
-  - ng test --source-map=false --browsers=ChromeHeadless --watch=false
+  - ng test ----source-map=false --browsers=ChromeHeadless --watch=false
